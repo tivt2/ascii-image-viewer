@@ -1,6 +1,7 @@
 PROJ=ascii-renderer
 
-CFLAGS=-Wall -Wextra -Werror -pedantic -g -O0
+CFLAGS=-Wall -Wextra -Werror -pedantic -g -O0 -fsanitize=address
+LINKS=-lm
 CC=clang
 
 SRCDIR=src
@@ -14,7 +15,7 @@ run: all
 	./$(PROJ)
 
 $(PROJ): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@ $(LINKS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
