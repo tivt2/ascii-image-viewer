@@ -1,4 +1,4 @@
-PROJ=ascii-renderer
+PROJ=ascii-image-viewer
 
 CFLAGS=-Wall -Wextra -Werror -pedantic -g -O0 -fsanitize=address
 LINKS=-lm
